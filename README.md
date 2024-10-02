@@ -1,16 +1,10 @@
 # prueba_tecnica
 
-A new Flutter project.
+Para mejorar la información de las mentorías y los cursos, recomiendo:
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Duración: Especificar la duración de cada mentoría y curso.
+Nivel de Dificultad: Indicar si son para principiantes, intermedios o avanzados.
+Formato: Especificar si son presenciales, en línea, o híbridos.
+Requisitos Previos: Detallar cualquier conocimiento previo necesario.
+Certificación: Indicar si se ofrece un certificado al finalizar.
+Reseñas y Calificaciones: Incluir opiniones de participantes anteriores.
