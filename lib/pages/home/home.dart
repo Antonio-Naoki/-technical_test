@@ -4,6 +4,7 @@ import 'package:prueba_tecnica/model/mertorias.dart';
 import 'package:prueba_tecnica/pages/course_details/course_details.dart';
 import 'package:prueba_tecnica/pages/mentoria_details/mentoria_details.dart';
 import 'package:prueba_tecnica/service/api_service.dart';
+import 'package:prueba_tecnica/utils/app_colors.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -26,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Inicio'),
-        backgroundColor: Colors.teal,
+        backgroundColor: AppColors.ColorAppBar,
       ),
       body: SingleChildScrollView(
         child: Column(

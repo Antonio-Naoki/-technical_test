@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:prueba_tecnica/model/mertorias.dart';
 import 'package:prueba_tecnica/service/api_service.dart';
+import 'package:prueba_tecnica/utils/app_colors.dart';
 
 class MentoriaDetails extends StatelessWidget {
   final Mentoria mentoria;
@@ -12,12 +13,11 @@ class MentoriaDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(mentoria.title),
-        backgroundColor: Colors.teal,
+        backgroundColor: AppColors.ColorAppBar,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // Tarjeta de descripción de la mentoría
             Card(
               margin: EdgeInsets.all(16.0),
               elevation: 5,
@@ -28,7 +28,6 @@ class MentoriaDetails extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        // Muestra el diálogo con el texto completo
                         showDialog(
                           context: context,
                           builder: (context) => AlertDialog(
@@ -57,12 +56,12 @@ class MentoriaDetails extends StatelessWidget {
                     SizedBox(height: 10),
                     GestureDetector(
                       onTap: () {
-                        // Muestra el diálogo con el texto completo
                         showDialog(
                           context: context,
                           builder: (context) => AlertDialog(
                             title: Text(mentoria.title),
-                            content: SingleChildScrollView(child: Text(mentoria.detail)),
+                            content: SingleChildScrollView(
+                                child: Text(mentoria.detail)),
                             actions: [
                               TextButton(
                                 onPressed: () => Navigator.of(context).pop(),
@@ -94,7 +93,6 @@ class MentoriaDetails extends StatelessWidget {
                     color: Colors.teal),
               ),
             ),
-            // Lista de características
             ListView.builder(
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
@@ -123,7 +121,6 @@ class MentoriaDetails extends StatelessWidget {
                     color: Colors.teal),
               ),
             ),
-            // Lista de mentorías relacionadas
             FutureBuilder<List<Mentoria>>(
               future: ApiService().fetchMentorias(),
               builder: (context, snapshot) {

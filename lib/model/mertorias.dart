@@ -1,9 +1,9 @@
 class Mentoria {
-  final String categoryKey; // Clave de categoría
+  final String categoryKey;
   final String title;
-  final String description; // Descripción de la mentoría
-  final String detail; // Detalle de la mentoría
-  final List<Characteristic> characteristics; // Lista de características
+  final String description;
+  final String detail; 
+  final List<Characteristic> characteristics; 
 
   Mentoria({
     required this.categoryKey,
@@ -29,9 +29,9 @@ class Mentoria {
 }
 
 class Characteristic {
-  final String description; // Descripción de la característica
-  final String icon; // Icono asociado
-  final bool isActive; // Si está activo
+  final String description; 
+  final String icon; 
+  final bool isActive;
 
   Characteristic({
     required this.description,

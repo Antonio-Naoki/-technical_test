@@ -6,7 +6,7 @@ class Course {
   final String detail; 
   final String image; 
   final String title; 
-  final List<Characteristic> characteristics; // Agregado
+  final List<Characteristic> characteristics;
 
   Course({
     required this.categoryKey,
@@ -14,7 +14,7 @@ class Course {
     required this.detail,
     required this.image,
     required this.title,
-    required this.characteristics, // Agregado
+    required this.characteristics, 
   });
 
   factory Course.fromJson(Map<String, dynamic> json) {
@@ -28,7 +28,7 @@ class Course {
       detail: json['detail'] ?? '',
       image: json['image'] ?? '',
       title: json['title'] ?? '',
-      characteristics: characteristics, // Agregado
+      characteristics: characteristics,
     );
   }
 }

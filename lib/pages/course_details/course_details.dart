@@ -3,6 +3,7 @@ import 'package:prueba_tecnica/model/courses.dart';
 import 'package:prueba_tecnica/model/mertorias.dart';
 import 'package:prueba_tecnica/pages/mentoria_details/mentoria_details.dart';
 import 'package:prueba_tecnica/service/api_service.dart';
+import 'package:prueba_tecnica/utils/app_colors.dart';
 
 class CourseDetail extends StatelessWidget {
   final Course curso;
@@ -16,12 +17,12 @@ class CourseDetail extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(curso.title),
-        backgroundColor: Colors.teal,
+        backgroundColor: AppColors.ColorAppBar,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // Tarjeta de imagen del curso
+            // imagen en tarjeta para el curso... Probar estado de carga
             Card(
               margin: EdgeInsets.all(16.0),
               elevation: 5,
@@ -68,7 +69,6 @@ class CourseDetail extends StatelessWidget {
                 style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
               ),
             ),
-            // Lista de mentorías relacionadas
             FutureBuilder<List<Mentoria>>(
               future: ApiService().fetchMentorias(),
               builder: (context, snapshot) {

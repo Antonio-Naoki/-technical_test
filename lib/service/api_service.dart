@@ -10,20 +10,19 @@ class ApiService {
     final response = await http.get(Uri.parse('$baseUrl/mentorings/all'));
 
     print('Status code: ${response.statusCode}');
-    print('MENTORIAS: ${response.body}'); // Para depuración
+    print('MENTORIAS: ${response.body}');
 
     if (response.statusCode == 200) {
       Map<String, dynamic> jsonResponse = json.decode(response.body);
-      // Verificar si 'mentorings' existe y no es nulo
       if (jsonResponse['data'] != null &&
           jsonResponse['data']['mentorings'] != null) {
         List<dynamic> mentoriasList = jsonResponse['data']['mentorings'];
         return mentoriasList.map((data) => Mentoria.fromJson(data)).toList();
       } else {
-        throw Exception('No mentorias found');
+        throw Exception('no mentorias found');
       }
     } else {
-      throw Exception('Failed to load mentorias');
+      throw Exception('failed to load mentorias... exception');
     }
   }
 
@@ -31,20 +30,19 @@ class ApiService {
     final response = await http.get(Uri.parse('$baseUrl/courses/all'));
 
     print('Status code: ${response.statusCode}');
-    print('CURSOS: ${response.body}'); // Para depuración
+    print('CURSOS: ${response.body}');
 
     if (response.statusCode == 200) {
       Map<String, dynamic> jsonResponse = json.decode(response.body);
-      // Accede a la lista de cursos desde 'items'
       if (jsonResponse['data'] != null &&
           jsonResponse['data']['items'] != null) {
         List<dynamic> coursesList = jsonResponse['data']['items'];
         return coursesList.map((data) => Course.fromJson(data)).toList();
       } else {
-        throw Exception('No courses found'); // Para manejar ausencia de cursos
+        throw Exception('no courses found');
       }
     } else {
-      throw Exception('Failed to load cursos'); // Manejo de error de conexión
+      throw Exception('failed to load cursos');
     }
   }
 }
